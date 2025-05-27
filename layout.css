@@ -1,0 +1,261 @@
+/* LAYOUT STYLES */
+
+/* MAIN HEADER STYLING */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+}
+
+.main-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo img {
+    height: 75px;
+    width: 75px;
+    display: block;
+    object-fit: cover;
+}
+
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+}
+
+.main-nav .nav-link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    position: relative;
+    text-shadow: 0 0 4px var(--color-black) /* Gir en diskret outline-effekt */
+}
+.main-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.main-nav .nav-link.active {
+    color: var(--color-white);
+}
+
+.main-nav .nav-link.active::after {
+    width: 100%;
+}
+/* ----- STILER FOR HEADER PÅ "ALTERNATIVE" SIDER (IKKE INDEX) ----- */
+body.alt-page {
+    background-color: var(--color-light-beige); /* NYTT: Sett bakgrunnsfargen for hele siden her */
+    /* Du har kanskje også padding-top i body.alt-page, la oss legge den til for å dytte innholdet ned: */
+    padding-top: 100px; /* Eksempel: Juster denne for å dytte innholdet ned fra headeren. Du kan fjerne den fra .about-section.light-beige-bg hvis du vil. */
+}
+
+body.alt-page .main-header {
+    background-color: transparent;
+}
+
+body.alt-page .main-nav .nav-link {
+    color: var(--color-primary); /* Grønn tekst på alt-page */
+    text-shadow: none; /* Fjern tekst-skyggen på alt-page (ikke nødvendig på lys bakgrunn) */
+}
+
+
+/* Burger-meny knapp (Standard skjult på desktop) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle .icon-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-white);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* FOOTER STYLING */
+.main-footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 3rem 0;
+    margin-top: auto; /* Dytter footeren helt ned hvis body/main er flexet */
+}
+
+.main-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Avstand mellom venstre og høyre side */
+    flex-wrap: wrap; /* Tillat bryting på mindre skjermer */
+}
+
+.footer-left {
+    flex: 1; /* Tar tilgjengelig plass */
+    min-width: 250px; /* Minimum bredde før bryting */
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left .footer-heading {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons img {
+    height: 25px; /* Størrelse på sosiale medier ikoner */
+    width: auto;
+    filter: brightness(0) invert(1); /* Gjør ikonene hvite (hvis de er svarte SVG-er) */
+    transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    margin-top: auto; /* Skyver copyright ned i footer-left */
+}
+
+.footer-nav-columns {
+    display: flex;
+    gap: 3rem; /* Avstand mellom navigasjonskolonnene */
+    flex-wrap: wrap; /* Tillat bryting */
+    justify-content: flex-end; /* Justerer kolonnene til høyre når det er plass */
+}
+
+.footer-nav-col {
+    min-width: 120px; /* Minimum bredde for hver nav-kolonne */
+}
+
+.footer-nav-col .footer-heading {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.footer-nav-list {
+    list-style: none;
+}
+
+.footer-nav-list li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav-list a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.8; /* Litt gjennomsiktig for mykere utseende */
+    transition: opacity 0.3s ease;
+}
+
+.footer-nav-list a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* RESPONSIVITET for Layout-elementer */
+
+@media (max-width: 992px) {
+    .main-header .logo img {
+        height: 80px; /* Mindre logo på nettbrett */
+        width: 80px;
+    }
+    .main-nav .nav-link {
+        font-size: 1.15rem; /* Mindre skrift på nettbrett-navigasjon */
+    }
+    .btn-contact {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
+
+    .main-footer .footer-content {
+        flex-direction: column; /* Stabler footer-innholdet */
+        align-items: center; /* Sentrerer elementer */
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .footer-left {
+        min-width: unset;
+        align-items: center; /* Sentrer innhold i venstre del */
+    }
+
+    .social-icons {
+        justify-content: center; /* Sentrer sosiale medier ikoner */
+    }
+
+    .footer-nav-columns {
+        flex-direction: column; /* Stabler navigasjonskolonnene */
+        align-items: center; /* Sentrerer kolonnene */
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .footer-nav-col {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-nav {
+        display: none; /* Skjuler navigasjonsmenyen som standard på mobil */
+    }
+
+    .main-header .btn-contact {
+        display: none; /* Gjemmer kontaktknappen for å gi plass til hamburgermeny-ikonet */
+    }
+
+    .nav-toggle {
+        display: block; /* Viser hamburgermeny-knappen på mobil */
+    }
+
+    .main-header .logo img { /* Enda mindre logo på mobiler */
+        height: 60px;
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .logo img {
+        height: 50px;
+        width: 50px;
+    }
+}

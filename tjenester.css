@@ -1,0 +1,118 @@
+/* PAGE SPECIFIC STYLES - tjenester.css */
+
+.hero-tjenester {
+    padding-top: 1rem; /* Adjusted for better spacing below header */
+    padding-bottom: 3rem;
+    text-align: center; /* Keep this section centered */
+}
+
+.hero-tjenester .section-title {
+    color: var(--color-primary); /* Ensures the title is green */
+    margin-bottom: 1.5rem;
+}
+
+.hero-tjenester p {
+    color: var(--color-primary); /* Ensures the paragraph text is green */
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 800px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-grid-section {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+/* Specific styling for CTA in tjenester.html to left-align text and adjust sizes */
+.cta-bottom-section.light-beige-bg .container { /* Target the container within this specific section */
+    text-align: left; /* Left-align all content within the container */
+    padding-bottom: 10rem;
+}
+
+.cta-bottom-section .section-title {
+    color: var(--color-primary); /* Ensure CTA title text is green on beige background */
+    text-align: left; /* Explicitly left-align the title */
+}
+
+.cta-bottom-section .cta-description {
+    color: var(--color-primary); /* Ensure CTA paragraph text is green on beige background */
+    font-size: 1.5rem; /* Make paragraph text larger */
+    max-width: 75vh; /* Remove max-width to allow it to take more space if needed */
+    margin-left: 0; /* Align left */
+    margin-right: 0; /* Align left */
+    text-align: left; /* Explicitly left-align the description */
+}
+
+.cta-bottom-section .btn-primary {
+    font-size: 1.2rem; /* Make button text larger */
+    padding: 1rem 2.5rem; /* Increase button padding for a larger button */
+    margin-top: 3rem;
+}
+
+/* Responsive adjustments for tjenester.css specific elements */
+@media (max-width: 992px) {
+    .hero-tjenester {
+        padding-top: 8rem;
+    }
+    .hero-tjenester .section-title {
+        font-size: 2.5rem;
+    }
+    .hero-tjenester p {
+        font-size: 1.1rem;
+    }
+
+    .cta-bottom-section .cta-description {
+        font-size: 1.2rem; /* Adjust paragraph size for tablet */
+    }
+    .cta-bottom-section .btn-primary {
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-tjenester {
+        padding-top: 6rem;
+    }
+    .hero-tjenester .section-title {
+        font-size: 2rem;
+    }
+    .hero-tjenester p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .cta-bottom-section .cta-description {
+        font-size: 1.1rem; /* Adjust paragraph size for mobile */
+    }
+    .cta-bottom-section .btn-primary {
+        font-size: 1rem;
+        padding: 0.8rem 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-tjenester {
+        padding-top: 4rem;
+    }
+    .hero-tjenester .section-title {
+        font-size: 1.8rem;
+    }
+    .hero-tjenester p {
+        font-size: 0.9rem;
+    }
+
+    .cta-bottom-section .section-title {
+        text-align: center; /* Center align title on very small screens for better readability */
+    }
+    .cta-bottom-section .cta-description {
+        font-size: 1rem; /* Adjust paragraph size for small mobile */
+        text-align: center; /* Center align description on very small screens */
+    }
+    .cta-bottom-section .btn-primary {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem;
+    }
+}

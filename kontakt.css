@@ -1,0 +1,83 @@
+/* PAGE SPECIFIC STYLES - kontakt.css */
+
+/* Stiler for hovedinnholdet på kontaktsiden */
+/* Dette vil gi den beige bakgrunnen og grønn tekst for alt innhold mellom header og footer */
+.contact-section {
+    padding-top: 15rem; /* Gir rom for headeren og dytter innholdet ned */
+    padding-bottom: 8rem; /* Luft under kontaktinfo */
+    flex-grow: 1; /* Sikrer at denne seksjonen tar all tilgjengelig plass vertikalt */
+    display: flex; /* Bruker flexbox for å sentrere innhold vertikalt om det er lite */
+    flex-direction: column;
+    align-items: center; /* Sentrerer innhold horisontalt */
+    text-align: center; /* Sentrerer tekst */
+    background-color: var(--color-light-beige); /* <-- NYTT: Seksjonens bakgrunn er beige */
+    color: var(--color-primary); /* <-- NYTT: All tekst i seksjonen er grønn */
+    min-height: calc(100vh - 130px - 140px);
+}
+
+.contact-section .section-title {
+    color: var(--color-primary); /* Sikrer grønn tittel */
+    margin-bottom: 2rem;
+    padding-top: 0; /* Nullstiller padding-top fra global .section-title */
+}
+
+.contact-info p {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    /* color: var(--color-primary); <-- FJERNES: All tekst er allerede grønn fra .contact-section */
+}
+
+.contact-info p strong {
+    /* color: var(--color-primary); <-- FJERNES: All tekst er allerede grønn fra .contact-section */
+}
+
+.contact-info a {
+    color: var(--color-primary); /* Lenker skal også være grønne */
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVITET for kontakt.css */
+@media (max-width: 992px) {
+    .contact-section {
+        padding-top: 10rem;
+        padding-bottom: 6rem;
+    }
+    .contact-section .section-title {
+        font-size: 2.25rem;
+    }
+    .contact-info p {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-section {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+    .contact-section .section-title {
+        font-size: 2rem;
+    }
+    .contact-info p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+    .contact-section .section-title {
+        font-size: 1.8rem;
+    }
+    .contact-info p {
+        font-size: 1rem;
+    }
+}

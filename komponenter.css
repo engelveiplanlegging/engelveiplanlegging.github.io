@@ -1,0 +1,165 @@
+/* COMPONENTS STYLES */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivt rutenett, justert min-bredde */
+    gap: 1.5rem; /* JUSTERT: Litt mindre gap for å gi mer plass til kortene */
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+}
+
+.card {
+    background-color: var(--color-white); /* Standard kort bakgrunn (hvit) */
+    color: var(--text-on-light); /* Standard tekstfarge (svart) */
+    padding: 2rem;
+    border-radius: 42px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* En lett skygge for dybde */
+    display: flex; /* Bruk flex for innhold i kortet */
+    flex-direction: column;
+    /* Ingen align-items her, da vi justerer barna separat */
+    /* Fjernet text-align: left; herfra */
+}
+
+.card-green { /* Fargevariant for mørkegrønne kort */
+    background-color: var(--color-background-dark); /* Mørkegrønn */
+    color: var(--text-on-dark); /* Hvit tekst */
+}
+
+.card-beige { /* NY Fargevariant for beige kort (brukes på mørk grønn bakgrunn) */
+    background-color: var(--color-background-light); /* Bruker din definerte --color-beige fra :root */
+    color: var(--color-green); /* Svart tekst for bedre kontrast på beige bakgrunn */
+    font-weight: bold;
+}
+
+.card-dark-beige {
+    background-color: var(--color-beige); /* Uses the darker beige from base.css */
+    color: var(--color-green); /* Green text for contrast */
+    font-weight: bold;
+}
+
+.card-icon {
+    width: 80px;
+    height: 60px;
+    margin-top: auto; /* Dytter ikonet til bunnen */
+    align-self: center; /* <-- NYTT: Senterer ikonet horisontalt i flex-containeren */
+    display: flex; /* Sikrer at innholdet i ikonet kan sentreres */
+    justify-content: center; /* Senterer selve bildet/innholdet i ikon-div'en */
+    align-items: center; /* Sentrerer selve bildet/innholdet i ikon-div'en */
+}
+
+.card-icon img {
+    max-width: 100%; /* Sikrer at ikonene skalerer */
+    height: auto;
+}
+
+/* For å håndtere ikonfarge endring på mørk bakgrunn (krever ofte spesifikke SVG-endringer eller filter) */
+.card-green .card-icon img {
+    /* filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 0.8rem;
+    text-align: center; /* <-- GJENINNSETT: Venstrejusterer tittelen */
+    width: 100%; /* <-- VIKTIG: Sikrer at tittelen tar hele bredden for text-align */
+}
+
+.card-description {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    text-align: left; /* <-- GJENINNSETT: Venstrejusterer beskrivelsen */
+    width: 100%; /* <-- VIKTIG: Sikrer at beskrivelsen tar hele bredden for text-align */
+}
+/* Spesifikk stil for "Mer å Tilby" kortet */
+.card-plus {}
+
+/* -------------- Om oss Seksjon (Dedikert Fagkompetanse) - Komponent-spesifikke stiler -------------- */
+/* Merknad: Noe av layouten for denne seksjonen (som display: flex på .profile-layout)
+   er en del av dens "komponent-layout", og ligger derfor her. */
+
+   .about-section .section-title {
+    text-align: left; /* <-- Nytt: Overstyrer for å venstrejustere tittelen i denne seksjonen */
+}
+
+   .profile-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+    text-align: left; /* <-- NYTT: Sørger for at teksten er venstrejustert som standard */
+}
+
+.profile-layout > div { /* Wrapper for tekstinnhold */
+    flex: 1;
+    min-width: 300px; /* Minimum bredde før bryting */
+    /* text-align: left; <-- Kan flyttes hit om det trengs spesifikk justering for kun tekstblokken */
+}
+
+.profile-layout p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+.profile-image-wrapper {
+    flex-shrink: 0;
+    width: 300px; /* <-- JUSTERT: Behold bredden på bildet */
+    height: auto; /* <-- JUSTERT: Tillat bildet å skalere proporsjonalt */
+    border-radius: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%; /* Sørger for at bildet fyller wrapperen */
+    height: auto; /* <-- JUSTERT: Viktig for proporsjonalitet */
+    object-fit: cover;
+    display: block;
+}
+
+/* RESPONSIVITET for Komponenter */
+
+@media (max-width: 992px) {
+    .cards-grid {
+        gap: 1.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .profile-layout {
+        gap: 2rem;
+        flex-direction: column; /* Stabler tekst og bilde på nettbrett/mobil */
+        text-align: center; /* <-- NYTT: Sentrerer tekst KUN på mobil/nettbrett */
+    }
+
+    .profile-layout > div {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .profile-image-wrapper {
+        margin: 2rem auto 0 auto; /* Sentrer bildet når det stables */
+        width: 250px; /* Mindre på nettbrett */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image-wrapper {
+        width: 200px; /* Enda mindre på små mobiler */
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) { /* Typisk breakpoint for større skjermer */
+    .cards-grid {
+        grid-template-columns: repeat(4, 1fr); /* Tvinger 4 like store kolonner */
+    }
+}

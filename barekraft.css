@@ -1,0 +1,136 @@
+/* pages/baerekraft.css */
+
+.baerekraft-section.light-beige-bg {
+    padding-top: 2rem; /* Redusert padding-top for å flytte tittel og tekst opp */
+    padding-bottom: 0rem; /* Sikrer at det ikke er padding mellom seksjonen og bildet */
+}
+
+.baerekraft-section .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary); /* Gjør tittel grønn */
+    font-size: 5rem; /* Gjør tittel større */
+}
+
+.baerekraft-section p {
+    line-height: 1.6;
+    margin-bottom: 0rem; /* Nullstill bunnmargin på paragrafer */
+    margin-top: 0rem;    /* Nullstill toppmargin på paragrafer */
+    color: var(--color-primary); /* Gjør paragraftekst grønn */
+    font-size: 1.5rem; /* Gjør paragraftekst større */
+    text-align: center; /* Midtstill paragrafen */
+    max-width: 800px; /* Begrens bredden for bedre lesbarhet når den er midtstilt */
+    margin-left: auto; /* Sentrer paragrafblokken */
+    margin-right: auto; /* Sentrer paragrafblokken */
+}
+
+/* VIKTIG: Denne regelen sikrer at siste P-tag ikke har bunnmargin */
+.baerekraft-section p:last-of-type {
+    margin-bottom: 0rem !important;
+}
+
+/* NYTT: Øker bredden av containeren for tekst spesifikt på Bærekraft-siden */
+.baerekraft-section .container {
+    max-width: 1200px; /* Juster denne verdien (f.eks. 1000px, 1400px, 1600px) */
+    padding: 0 40px; /* Hvis du vil ha mer padding på sidene også */
+}
+
+
+.skog-bilde-wrapper {
+    width: 100%;
+    overflow: hidden; /* Veldig viktig for å klippe ut overflødige deler */
+    /* JUSTERT: Gjør margin-top ENDA MER negativ for å trekke bildet og footeren enda høyere opp */
+    margin-top: -25rem; /* EKSPERIMENTER HER! Prøv f.eks. -10rem, -12rem, -15rem, osv. */
+    /* Test deg frem i nettleserens utviklerverktøy for å finne perfekt verdi. */
+
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.skog-bilde {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 100vh; /* Som du har satt den */
+    object-fit: cover;
+    object-position: 50% 90%; /* Behold denne, eller juster for å flytte selve bildet i rammen */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Responsive justeringer */
+@media (max-width: 992px) {
+    .baerekraft-section.light-beige-bg {
+        padding-top: 3rem; /* Redusert padding-top for nettbrett */
+        padding-bottom: 0rem;
+    }
+    .baerekraft-section .section-title {
+        font-size: 2.5rem; /* Juster tittelstørrelse for nettbrett */
+    }
+    .baerekraft-section p {
+        font-size: 1.1rem; /* Juster paragrafstørrelse for nettbrett */
+        max-width: 90%; /* Tilpass bredde for nettbrett */
+    }
+    .baerekraft-section .container {
+        max-width: 95%; /* La den være litt bredere enn standard 992px breakpoint */
+        padding: 0 20px;
+    }
+    .skog-bilde-wrapper {
+        margin-top: -6rem; /* Juster negativ margin for nettbrett */
+    }
+    .skog-bilde {
+        max-height: 20vh;
+        object-position: 50% 90%;
+    }
+}
+
+@media (max-width: 767px) {
+    .baerekraft-section.light-beige-bg {
+        padding-top: 2rem; /* Redusert padding-top for mobil */
+        padding-bottom: 0rem;
+    }
+    .baerekraft-section .section-title {
+        font-size: 2rem; /* Juster tittelstørrelse for mobil */
+    }
+    .baerekraft-section p {
+        font-size: 1rem; /* Juster paragrafstørrelse for mobil */
+        max-width: 90%; /* Tilpass bredde for mobil */
+    }
+    .baerekraft-section .container {
+        max-width: 90%; /* Tilpass bredde for mobil/nettbrett */
+        padding: 0 15px;
+    }
+    .skog-bilde-wrapper {
+        margin-top: -4rem; /* Juster negativ margin for mobil */
+    }
+    .skog-bilde {
+        max-height: 15vh;
+        object-position: 50% 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .baerekraft-section.light-beige-bg {
+        padding-top: 1.5rem; /* Redusert padding-top for små mobiler */
+        padding-bottom: 0rem;
+    }
+    .baerekraft-section .section-title {
+        font-size: 1.8rem; /* Juster tittelstørrelse for små mobiler */
+    }
+    .baerekraft-section p {
+        font-size: 0.9rem; /* Juster paragrafstørrelse for små mobiler */
+        max-width: 95%; /* Tilpass bredde for små mobiler */
+    }
+    .baerekraft-section .container {
+        max-width: 95%; /* Juster ytterligere for små mobiler for å unngå for smal tekst */
+        padding: 0 10px;
+    }
+    .skog-bilde-wrapper {
+        margin-top: -2rem; /* Juster negativ margin for små mobiler */
+    }
+    .skog-bilde {
+        max-height: 10vh;
+        object-position: 50% 90%;
+    }
+}

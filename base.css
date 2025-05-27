@@ -1,0 +1,124 @@
+/* Generelle Fargevariabler */
+:root {
+    --color-white: #F0F0F0;
+    --color-light-beige: #EEE4D3;
+    --color-beige: #D8CDB3;
+    --color-green: #16422C;
+    --color-black: #0C1011;
+
+    --color-primary: var(--color-green);
+    --color-secondary: var(--color-beige);
+    --color-background-light: var(--color-light-beige);
+    --color-background-dark: var(--color-green);
+    --color-text-dark: var(--color-black);
+    --color-text-light: var(--color-white);
+
+    --text-on-light: var(--color-black);
+    --text-on-dark: var(--color-white);
+
+    /* Typografi for overskrifter og brødtekst */
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+}
+
+/* Grunnleggende Reset og Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    min-height: 100vh; /* Sikrer at body er minst viewport-høyden */
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Importer Google Font - Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* Generelle Hjelpeklasser */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 5rem;
+}
+
+.white-text {
+    color: var(--color-white) !important;
+}
+
+/* Seksjonsbakgrunner - Definerer fargene her */
+.light-beige-bg {
+    background-color: var(--color-background-light);
+    color: var(--text-on-light);
+}
+
+.dark-green-bg {
+    background-color: var(--color-background-dark);
+    color: var(--text-on-dark);
+}
+
+/* Generelle Knappestiler (dette er de grunnleggende stilene for .btn) */
+.btn {
+    display: inline-block;
+    padding: 0.3rem 1.8rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap; /* Hindrer tekst i å bryte linje unødvendig i knapper */
+}
+
+.btn-primary {
+    background-color: var(--color-primary); /* <-- ENDRET: Tilbake til solid farge */
+    color: var(--color-text-light);
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Justert transition */
+    /* Fjernet background-size og background-position */
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-contact {
+    background-color: var(--color-primary); /* <-- ENDRET: Tilbake til solid farge */
+    color: var(--color-text-light);
+    border: 2px solid var(--color-primary); /* <-- ENDRET: La til border igjen */
+    padding: 0.3rem 1.8rem;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Justert transition */
+}
+
+.btn-contact:hover {
+    transform: scale(1.05);
+}

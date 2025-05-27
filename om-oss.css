@@ -1,0 +1,62 @@
+/* PAGE SPECIFIC STYLES - om-oss.css */
+
+/* Stiler for hovedinnholdet på "Om oss"-siden */
+.about-section.light-beige-bg {
+    /* Reduser standard padding-top for større skjermer. */
+    padding-top: 10rem; /* Justert fra 15rem. Dette vil være for skjermer > 992px */
+    padding-bottom: 8rem; /* Behold denne for avstand til fotballen */
+
+    /* Bruk flexbox for å justere innholdet i seksjonen. */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Sentrerer innholdet horisontalt */
+    justify-content: flex-start; /* Starter innholdet fra toppen av den nye paddingen */
+}
+
+/* For å sikre at tittelen på 'om-oss.html' er sentrert på denne siden,
+   men fortsatt kan være venstrejustert på index.html dersom den seksjonen
+   har en annen seksjonstittel-stil. */
+.about-section .section-title {
+    text-align: start; /* Standard: Venstrejustert på større skjermer */
+    padding-top: 0; /* Nullstiller padding-top fra global .section-title i base.css */
+    color: var(--color-primary);
+}
+
+/* Hvis teksten i .profile-layout p skal ha en annen størrelse spesifikt for denne siden. */
+.profile-layout p {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+/* Responsive justeringer for padding og tekstjustering */
+@media (max-width: 992px) {
+    .about-section.light-beige-bg {
+        padding-top: 7rem; /* Redusert ytterligere for små PC-skjermer/nettbrett (fra 10rem) */
+        padding-bottom: 6rem;
+    }
+    /* Sentrer tittelen når skjermen blir mindre enn 992px */
+    .about-section .section-title {
+        text-align: center;
+    }
+    .profile-layout p {
+        text-align: center; /* Sentrer teksten i paragrafene også */
+    }
+}
+
+@media (max-width: 767px) {
+    .about-section.light-beige-bg {
+        padding-top: 5rem; /* Redusert ytterligere for mindre nettbrett/større mobiler (fra 8rem) */
+        padding-bottom: 4rem;
+    }
+    /* Tittelen og teksten er allerede sentrert fra media (max-width: 992px) */
+}
+
+@media (max-width: 480px) {
+    .about-section.light-beige-bg {
+        padding-top: 4rem; /* Redusert ytterligere for små mobiler (fra 6rem) */
+        padding-bottom: 3rem;
+    }
+    .profile-layout p {
+        font-size: 1rem; /* Juster tekststørrelse for mobil for bedre lesbarhet */
+    }
+}

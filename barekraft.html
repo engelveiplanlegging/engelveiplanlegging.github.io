@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engel - Bærekraft</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/komponenter.css">
+    <link rel="stylesheet" href="../css/barekraft.css">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+</head>
+<body class="alt-page">
+    <header class="main-header">
+        <div class="header-content container">
+            <a href="index.html" class="logo">
+                <img src="../img/logo.png" alt="Engel Logo">
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="tjenester.html" class="nav-link">Tjenester</a></li>
+                    <li class="nav-item"><a href="om-oss.html" class="nav-link">Om oss</a></li>
+                    <li class="nav-item"><a href="barekraft.html" class="nav-link active">Bærekraft</a></li>
+                </ul>
+            </nav>
+            <a href="kontakt.html" class="btn btn-contact">Ta Kontakt</a>
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="baerekraft-section light-beige-bg">
+            <div class="container">
+                <h1 class="section-title">Bærekraft</h1>
+                <p>
+                    Engel fokuserer på bærekraftig veiplanlegging ved å utvikle prosjekttilpassede løsninger som minimerer klimagassutslipp, 
+                    tap av naturmangfold og endringer i økosystemtjenester. Vi bruker digital teknologi og beste praksis for å effektivisere anbudsprosesser og entreprenørarbeid.
+                </p>
+                <p>
+                    Vi ser et behov i markedet for å forene tradisjonell veiplanlegging med miljømessig, areal- og CO2-nøytral utvikling. 
+                    Målet er å tilby tjenester som viser naturverdien av arealer og foreslå tiltak for å øke diversitet og økologisk verdi, med sikte på å oppnå naturgevinst.
+                </p>
+            </div>
+        </section>
+
+        <div class="skog-bilde-wrapper">
+            <img src="../img/skog.png" alt="Skog" class="skog-bilde">
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content container">
+            <div class="footer-left">
+                <h3 class="footer-heading">Engel</h3>
+                <p class="footer-credit">Design & Utvikling av [Ditt Navn/Byrå]</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><img src="../img/icon-facebook.svg" alt="Facebook"></a>
+                    <a href="#" aria-label="LinkedIn"><img src="../img/icon-linkedin.svg" alt="LinkedIn"></a>
+                    <a href="#" aria-label="Instagram"><img src="../img/icon-instagram.svg" alt="Instagram"></a>
+                </div>
+                <p class="footer-copyright">&copy; <span id="current-year"></span> Engel. Alle rettigheter reservert.</p>
+            </div>
+
+            <div class="footer-nav-columns">
+                <div class="footer-nav-col">
+                    <h4 class="footer-heading">Tjenester</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="tjenester.html#veiplaner">Veiplaner</a></li>
+                        <li><a href="tjenester.html#maskinfil">Maskinfil</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-col">
+                    <h4 class="footer-heading">Om oss</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="om-oss.html#jesper">Om Jesper</a></li>
+                        <li><a href="om-oss.html#teamet">Om teamet</a></li>
+                        <li><a href="om-oss.html#bedriften">Om bedriften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-col">
+                    <h4 class="footer-heading">Kontakt oss</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="kontakt.html#info">Kontakt informasjon</a></li>
+                        <li><a href="kontakt.html#skjema">Kontaktskjema</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
