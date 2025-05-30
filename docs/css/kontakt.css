@@ -3,8 +3,8 @@
 /* Stiler for hovedinnholdet på kontaktsiden */
 /* Dette vil gi den beige bakgrunnen og grønn tekst for alt innhold mellom header og footer */
 .contact-section {
-    padding-top: 15rem; /* Gir rom for headeren og dytter innholdet ned */
-    padding-bottom: 8rem; /* Luft under kontaktinfo */
+    padding-top: 5rem; /* Gir rom for headeren og dytter innholdet ned */
+    padding-bottom: 10rem; /* Luft under kontaktinfo */
     flex-grow: 1; /* Sikrer at denne seksjonen tar all tilgjengelig plass vertikalt */
     display: flex; /* Bruker flexbox for å sentrere innhold vertikalt om det er lite */
     flex-direction: column;
