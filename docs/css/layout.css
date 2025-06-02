@@ -17,8 +17,8 @@
 }
 
 .main-header .logo img {
-    height: 75px;
-    width: 75px;
+    height: 6rem; /* Endret til rem (f.eks. 6rem = 96px hvis 1rem = 16px) */
+    width: 6rem;  /* Endret til rem */
     display: block;
     object-fit: cover;
 }
@@ -64,8 +64,7 @@
 /* ----- STILER FOR HEADER PÅ "ALTERNATIVE" SIDER (IKKE INDEX) ----- */
 body.alt-page {
     background-color: var(--color-light-beige); /* NYTT: Sett bakgrunnsfargen for hele siden her */
-    /* Du har kanskje også padding-top i body.alt-page, la oss legge den til for å dytte innholdet ned: */
-    padding-top: 100px; /* Eksempel: Juster denne for å dytte innholdet ned fra headeren. Du kan fjerne den fra .about-section.light-beige-bg hvis du vil. */
+    padding-top: 6.25rem; /* Endret 100px til rem (100px / 16px = 6.25rem) */
 }
 
 body.alt-page .main-header {
@@ -137,7 +136,7 @@ body.alt-page .main-nav .nav-link {
 }
 
 .social-icons img {
-    height: 25px; /* Størrelse på sosiale medier ikoner */
+    height: 1.5rem; /* Endret 25px til rem */
     width: auto;
     filter: brightness(0) invert(1); /* Gjør ikonene hvite (hvis de er svarte SVG-er) */
     transition: transform 0.2s ease;
@@ -195,11 +194,11 @@ body.alt-page .main-nav .nav-link {
 
 @media (max-width: 992px) {
     .main-header .logo img {
-        height: 80px; /* Mindre logo på nettbrett */
-        width: 80px;
+        height: 5rem; /* Tilpasset rem for nettbrett */
+        width: 5rem;
     }
     .main-nav .nav-link {
-        font-size: 1.15rem; /* Mindre skrift på nettbrett-navigasjon */
+        font-size: 1.15rem;
     }
     .btn-contact {
         font-size: 1rem;
@@ -207,24 +206,24 @@ body.alt-page .main-nav .nav-link {
     }
 
     .main-footer .footer-content {
-        flex-direction: column; /* Stabler footer-innholdet */
-        align-items: center; /* Sentrerer elementer */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         gap: 3rem;
     }
 
     .footer-left {
         min-width: unset;
-        align-items: center; /* Sentrer innhold i venstre del */
+        align-items: center;
     }
 
     .social-icons {
-        justify-content: center; /* Sentrer sosiale medier ikoner */
+        justify-content: center;
     }
 
     .footer-nav-columns {
-        flex-direction: column; /* Stabler navigasjonskolonnene */
-        align-items: center; /* Sentrerer kolonnene */
+        flex-direction: column;
+        align-items: center;
         gap: 2rem;
         justify-content: center;
     }
@@ -236,26 +235,26 @@ body.alt-page .main-nav .nav-link {
 
 @media (max-width: 767px) {
     .main-nav {
-        display: none; /* Skjuler navigasjonsmenyen som standard på mobil */
+        display: none;
     }
 
     .main-header .btn-contact {
-        display: none; /* Gjemmer kontaktknappen for å gi plass til hamburgermeny-ikonet */
+        display: none;
     }
 
     .nav-toggle {
-        display: block; /* Viser hamburgermeny-knappen på mobil */
+        display: block;
     }
 
-    .main-header .logo img { /* Enda mindre logo på mobiler */
-        height: 60px;
-        width: 60px;
+    .main-header .logo img {
+        height: 4rem; /* Tilpasset rem for mobil */
+        width: 4rem;
     }
 }
 
 @media (max-width: 480px) {
     .main-header .logo img {
-        height: 50px;
-        width: 50px;
+        height: 3rem; /* Tilpasset rem for små mobiler */
+        width: 3rem;
     }
 }

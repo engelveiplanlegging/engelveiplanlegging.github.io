@@ -13,7 +13,7 @@
 
 .hero-tjenester p {
     color: var(--color-primary); /* Ensures the paragraph text is green */
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     max-width: 800px; /* Limit width for readability */
     margin-left: auto;
@@ -26,29 +26,42 @@
 }
 
 /* Specific styling for CTA in tjenester.html to left-align text and adjust sizes */
-.cta-bottom-section.light-beige-bg .container { /* Target the container within this specific section */
-    text-align: left; /* Left-align all content within the container */
-    padding-bottom: 10rem;
+.cta-bottom-section { /* Flyttet padding-top/bottom til selve seksjonen */
+    padding-top: 0rem; /* Gir luft over innholdet i CTA-seksjonen */
+    padding-bottom: 10rem; /* Gir luft under innholdet i CTA-seksjonen */
+    text-align: left; /* Behold denne for å sikre venstrejustering av innholdet i containeren */
 }
 
+.cta-bottom-section.light-beige-bg {
+    /* Bakgrunnsfargen skal fortsatt gjelde for hele seksjonen */
+    background-color: var(--color-background-light); /* Eller var(--color-beige); */
+}
+
+
 .cta-bottom-section .section-title {
-    color: var(--color-primary); /* Ensure CTA title text is green on beige background */
-    text-align: left; /* Explicitly left-align the title */
+    color: var(--color-primary);
+    text-align: left;
 }
 
 .cta-bottom-section .cta-description {
-    color: var(--color-primary); /* Ensure CTA paragraph text is green on beige background */
-    font-size: 1.5rem; /* Make paragraph text larger */
-    max-width: 75vh; /* Remove max-width to allow it to take more space if needed */
-    margin-left: 0; /* Align left */
-    margin-right: 0; /* Align left */
-    text-align: left; /* Explicitly left-align the description */
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    max-width: 75vh;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
 }
 
 .cta-bottom-section .btn-primary {
-    font-size: 1.2rem; /* Make button text larger */
-    padding: 1rem 2.5rem; /* Increase button padding for a larger button */
+    font-size: 1.4rem;
+    padding: 1rem 2.5rem;
     margin-top: 3rem;
+}
+
+/* OVERSTYRER margin-top: auto på .main-footer fra layout.css
+   KUN for tjenester.html (eller sider der du vil ha fast mellomrom) */
+.main-footer {
+    margin-top: 5rem; /* Gir et fast mellomrom på 5rem over footeren */
 }
 
 /* Responsive adjustments for tjenester.css specific elements */
@@ -63,12 +76,21 @@
         font-size: 1.1rem;
     }
 
+    .cta-bottom-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
     .cta-bottom-section .cta-description {
-        font-size: 1.2rem; /* Adjust paragraph size for tablet */
+        font-size: 1.2rem;
     }
     .cta-bottom-section .btn-primary {
         font-size: 1.1rem;
         padding: 0.9rem 2rem;
+    }
+
+    .main-footer {
+        margin-top: 4rem; /* Juster for nettbrett */
     }
 }
 
@@ -84,12 +106,21 @@
         padding: 0 15px;
     }
 
+    .cta-bottom-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
     .cta-bottom-section .cta-description {
-        font-size: 1.1rem; /* Adjust paragraph size for mobile */
+        font-size: 1.1rem;
     }
     .cta-bottom-section .btn-primary {
         font-size: 1rem;
         padding: 0.8rem 1.8rem;
+    }
+
+    .main-footer {
+        margin-top: 3rem; /* Juster for mobil */
     }
 }
 
@@ -104,15 +135,24 @@
         font-size: 0.9rem;
     }
 
+    .cta-bottom-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
     .cta-bottom-section .section-title {
-        text-align: center; /* Center align title on very small screens for better readability */
+        text-align: center;
     }
     .cta-bottom-section .cta-description {
-        font-size: 1rem; /* Adjust paragraph size for small mobile */
-        text-align: center; /* Center align description on very small screens */
+        font-size: 1rem;
+        text-align: center;
     }
     .cta-bottom-section .btn-primary {
         font-size: 0.9rem;
         padding: 0.7rem 1.5rem;
+    }
+
+    .main-footer {
+        margin-top: 2rem; /* Juster for små mobiler */
     }
 }
