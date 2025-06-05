@@ -8,6 +8,7 @@
     width: 100%;
     z-index: 1000;
     padding: 1.5rem 0;
+    transition: background-color 0.3s ease; /* For jevn overgang på bakgrunn */
 }
 
 .main-header .header-content {
@@ -37,8 +38,9 @@
     padding: 0.5rem 0;
     transition: color 0.3s ease;
     position: relative;
-    text-shadow: 0 0 4px var(--color-black) /* Gir en diskret outline-effekt */
+    text-shadow: 0 0 4px var(--color-black); /* Gir en diskret outline-effekt */
 }
+
 .main-nav .nav-link::after {
     content: '';
     position: absolute;
@@ -61,6 +63,7 @@
 .main-nav .nav-link.active::after {
     width: 100%;
 }
+
 /* ----- STILER FOR HEADER PÅ "ALTERNATIVE" SIDER (IKKE INDEX) ----- */
 body.alt-page {
     background-color: var(--color-light-beige); /* NYTT: Sett bakgrunnsfargen for hele siden her */
@@ -76,23 +79,41 @@ body.alt-page .main-nav .nav-link {
     text-shadow: none; /* Fjern tekst-skyggen på alt-page (ikke nødvendig på lys bakgrunn) */
 }
 
-
 /* Burger-meny knapp (Standard skjult på desktop) */
 .nav-toggle {
-    display: none;
+    display: none; /* Skjult som standard */
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
+    z-index: 1001; /* Sikrer at knappen er over menyen */
 }
 
 .nav-toggle .icon-bar {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--color-white);
+    background-color: var(--color-white); /* Standard farge for desktop (index.html) */
     margin: 5px 0;
     transition: all 0.3s ease;
+}
+
+/* Fargejustering for burger-ikon på alt-page */
+body.alt-page .nav-toggle .icon-bar {
+    background-color: var(--color-primary); /* Grønn farge på alt-page */
+}
+
+/* Animering av burger-ikon til kryss */
+.nav-toggle.active .icon-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.active .icon-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active .icon-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* FOOTER STYLING */
@@ -235,7 +256,61 @@ body.alt-page .main-nav .nav-link {
 
 @media (max-width: 767px) {
     .main-nav {
-        display: none;
+        display: none; /* Dette overstyres til 'flex' av .active */
+        flex-direction: column;
+        background-color: var(--color-dark-green);
+        position: fixed;
+        top: 0;
+        /* NYE REGLER FOR Å SENTRERE HELE MENYEN HORISONTALT */
+        left: 50%; /* Startpunkt fra midten av skjermen */
+        transform: translateX(-50%); /* Flytter den 50% av sin egen bredde tilbake til venstre for å sentrere */
+        /* GAMLE REGLER (right: -100%) FJERNES HERFRA */
+
+        width: 85%; /* Litt bredere, opp til 85% for å gi mer plass */
+        max-width: 350px; /* Økt maks bredde for bedre lesbarhet */
+        height: 100%; /* Fortsatt full høyde */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Endret transition for å passe transform */
+        z-index: 999;
+
+        justify-content: center; /* Sentrerer nav-list vertikalt */
+        align-items: center;     /* Sentrerer nav-list horisontalt */
+        gap: 2rem;
+        opacity: 0; /* Starter usynlig */
+        pointer-events: none; /* Deaktiverer klikk når den er usynlig */
+    }
+
+    .main-nav.active {
+        /* NYE REGLER FOR Å VISE DEN SENTRERTE MENYEN */
+        left: 50%; /* Beholder 50% fra venstre */
+        transform: translateX(-50%); /* Beholder -50% for sentrering */
+        display: flex; /* Viser menyen */
+        opacity: 1; /* Gjør menyen synlig */
+        pointer-events: auto; /* Aktiverer klikk */
+    }
+
+    .main-nav .nav-list {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-nav .nav-link {
+        color: var(--color-white);
+        text-decoration: none;
+        font-weight: var(--font-weight-bold);
+        font-size: 1.5rem;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .main-nav .nav-link::after {
+        background-color: var(--color-primary);
     }
 
     .main-header .btn-contact {
@@ -244,11 +319,30 @@ body.alt-page .main-nav .nav-link {
 
     .nav-toggle {
         display: block;
+        background-color: transparent;
+    }
+
+    .main-header.menu-open {
+        background-color: var(--color-dark-green);
     }
 
     .main-header .logo img {
-        height: 4rem; /* Tilpasset rem for mobil */
+        height: 4rem;
         width: 4rem;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+    }
+    .overlay.active {
+        display: block;
     }
 }
 
