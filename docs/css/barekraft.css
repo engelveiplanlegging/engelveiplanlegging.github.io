@@ -1,7 +1,7 @@
 /* pages/baerekraft.css */
 
 .baerekraft-section.light-beige-bg {
-    padding-top: 2rem; /* Redusert padding-top for å flytte tittel og tekst opp */
+    padding-top: 0rem; /* Redusert padding-top for å flytte tittel og tekst opp */
     padding-bottom: 0rem; /* Sikrer at det ikke er padding mellom seksjonen og bildet */
 }
 
@@ -9,7 +9,7 @@
     text-align: center;
     margin-bottom: 2rem;
     color: var(--color-primary); /* Gjør tittel grønn */
-    font-size: 5rem; /* Gjør tittel større */
+    font-size: 4rem; /* Gjør tittel større */
 }
 
 .baerekraft-section p {
@@ -40,7 +40,7 @@
     width: 100%;
     overflow: hidden; /* Veldig viktig for å klippe ut overflødige deler */
     /* JUSTERT: Gjør margin-top ENDA MER negativ for å trekke bildet og footeren enda høyere opp */
-    margin-top: -25rem; /* EKSPERIMENTER HER! Prøv f.eks. -10rem, -12rem, -15rem, osv. */
+    margin-top: -8rem; /* EKSPERIMENTER HER! Prøv f.eks. -10rem, -12rem, -15rem, osv. */
     /* Test deg frem i nettleserens utviklerverktøy for å finne perfekt verdi. */
 
     margin-bottom: 0;

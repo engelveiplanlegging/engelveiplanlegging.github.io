@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    color: var(--color-white);
+    color: var(--color-light-beige);
     background-image: url('../img/forside.png'); /* Husk din egen sti */
     background-size: cover;
     background-position: center;
@@ -59,13 +59,16 @@
 }
 
 /* Seksjoner mellom hero og footer (Standard padding for disse seksjonene) */
-.values-section,
+
 .services-section,
 .about-section,
 .cta-bottom-section {
     padding-bottom: 5rem;
 }
 
+.profile-image-wrapper {
+    margin-top: 6rem;
+}
 
 /* -------------- CTA Bottom Section (Klar for å ta kontakt?) -------------- */
 .cta-bottom-section {

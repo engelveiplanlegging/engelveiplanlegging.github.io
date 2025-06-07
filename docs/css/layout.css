@@ -31,11 +31,11 @@
 }
 
 .main-nav .nav-link {
-    color: var(--color-white);
+    color: var(--color-light-beige);
     text-decoration: none;
     font-weight: var(--font-weight-bold);
     font-size: 1.3rem;
-    padding: 0.5rem 0;
+    padding: 0rem 0;
     transition: color 0.3s ease;
     position: relative;
     text-shadow: 0 0 4px var(--color-black); /* Gir en diskret outline-effekt */
@@ -93,14 +93,14 @@ body.alt-page .main-nav .nav-link {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--color-white); /* Standard farge for desktop (index.html) */
+    background-color: var(--color-dark-green); /* Standard farge for desktop (index.html) */
     margin: 5px 0;
     transition: all 0.3s ease;
 }
 
 /* Fargejustering for burger-ikon på alt-page */
 body.alt-page .nav-toggle .icon-bar {
-    background-color: var(--color-primary); /* Grønn farge på alt-page */
+    background-color: var(--color-light-beige); 
 }
 
 /* Animering av burger-ikon til kryss */

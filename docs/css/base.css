@@ -76,6 +76,14 @@ main {
     color: var(--color-white) !important;
 }
 
+.beige-text {
+    color: var(--color-light-beige);
+}
+
+.green-text {
+    color: var(--color-primary);
+}
+
 /* Seksjonsbakgrunner - Definerer fargene her */
 .light-beige-bg {
     background-color: var(--color-background-light);
@@ -102,7 +110,7 @@ main {
 
 .btn-primary {
     background-color: var(--color-primary); /* <-- ENDRET: Tilbake til solid farge */
-    color: var(--color-text-light);
+    color: var(--color-light-beige);
     transition: background-color 0.3s ease, transform 0.3s ease; /* Justert transition */
     /* Fjernet background-size og background-position */
 }
@@ -113,7 +121,7 @@ main {
 
 .btn-contact {
     background-color: var(--color-primary); /* <-- ENDRET: Tilbake til solid farge */
-    color: var(--color-text-light);
+    color: var(--color-light-beige);
     border: 2px solid var(--color-primary); /* <-- ENDRET: La til border igjen */
     padding: 0.3rem 1.8rem;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Justert transition */
