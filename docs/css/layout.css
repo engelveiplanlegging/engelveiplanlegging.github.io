@@ -19,8 +19,8 @@
 }
 
 .main-header .logo img {
-    height: 6rem; /* Endret til rem (f.eks. 6rem = 96px hvis 1rem = 16px) */
-    width: 6rem;  /* Endret til rem */
+    height: 5rem; /* Endret til rem (f.eks. 6rem = 96px hvis 1rem = 16px) */
+    width: 5rem;  /* Endret til rem */
     display: block;
     object-fit: cover;
     z-index: 10; /* Logoen ligger foran annet innhold i headeren */
@@ -350,6 +350,9 @@ body.alt-page .nav-toggle .icon-bar {
         display: block;
         pointer-events: auto; /* Overlegget fanger klikk når det er aktivt for å lukke menyen */
     }
+        h2 {
+        font-size: 1.5rem; /* Enda mindre for små telefoner */
+    }
 }
 
 @media (max-width: 480px) {
@@ -357,4 +360,5 @@ body.alt-page .nav-toggle .icon-bar {
         height: 3rem;
         width: 3rem;
     }
+    
 }
