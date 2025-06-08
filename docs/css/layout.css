@@ -75,7 +75,7 @@ body.alt-page .main-header {
 }
 
 body.alt-page .main-nav .nav-link {
-    color: var(--color-primary); /* Grønn tekst på alt-page */
+    color: var(--color-light-beige); /* Grønn tekst på alt-page */
     text-shadow: none; /* Fjern tekst-skyggen på alt-page (ikke nødvendig på lys bakgrunn) */
 }
 
