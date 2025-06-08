@@ -7,7 +7,7 @@
 
 .baerekraft-section .section-title {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     color: var(--color-primary); /* Gjør tittel grønn */
     font-size: 4rem; /* Gjør tittel større */
 }
@@ -62,75 +62,82 @@
 /* Responsive justeringer */
 @media (max-width: 992px) {
     .baerekraft-section.light-beige-bg {
-        padding-top: 3rem; /* Redusert padding-top for nettbrett */
+        padding-top: 0rem;
         padding-bottom: 0rem;
     }
     .baerekraft-section .section-title {
-        font-size: 2.5rem; /* Juster tittelstørrelse for nettbrett */
+        font-size: 2.5rem;
     }
     .baerekraft-section p {
-        font-size: 1.1rem; /* Juster paragrafstørrelse for nettbrett */
-        max-width: 90%; /* Tilpass bredde for nettbrett */
+        font-size: 1.1rem;
+        max-width: 90%;
     }
     .baerekraft-section .container {
-        max-width: 95%; /* La den være litt bredere enn standard 992px breakpoint */
+        max-width: 95%;
         padding: 0 20px;
     }
     .skog-bilde-wrapper {
-        margin-top: -6rem; /* Juster negativ margin for nettbrett */
+        /* Fjern eller juster margin-top her for å gi plass under teksten */
+        margin-top: 2rem; /* Gi litt avstand mellom tekst og bilde */
     }
     .skog-bilde {
-        max-height: 20vh;
-        object-position: 50% 90%;
+        /* FJERN max-height: 20vh; eller endre til object-fit: contain; */
+        max-height: unset; /* Lar bildet skalere naturlig i høyden */
+        object-fit: contain; /* Sikrer at hele bildet vises, kan gi "letterboxing" */
+        object-position: 50% 50%; /* Juster midtstilling om du bruker contain */
     }
 }
 
 @media (max-width: 767px) {
     .baerekraft-section.light-beige-bg {
-        padding-top: 2rem; /* Redusert padding-top for mobil */
+        padding-top: 0rem;
         padding-bottom: 0rem;
     }
     .baerekraft-section .section-title {
-        font-size: 2rem; /* Juster tittelstørrelse for mobil */
+        font-size: 2rem;
     }
     .baerekraft-section p {
-        font-size: 1rem; /* Juster paragrafstørrelse for mobil */
-        max-width: 90%; /* Tilpass bredde for mobil */
+        font-size: 1rem;
+        max-width: 90%;
     }
     .baerekraft-section .container {
-        max-width: 90%; /* Tilpass bredde for mobil/nettbrett */
+        max-width: 90%;
         padding: 0 15px;
     }
     .skog-bilde-wrapper {
-        margin-top: -4rem; /* Juster negativ margin for mobil */
+        margin-top: 1.5rem; /* Mindre avstand på mobil */
     }
     .skog-bilde {
-        max-height: 15vh;
-        object-position: 50% 90%;
+        /* FJERN max-height: 15vh; eller endre til object-fit: contain; */
+        max-height: unset; /* Lar bildet skalere naturlig i høyden */
+        object-fit: contain; /* Sikrer at hele bildet vises, kan gi "letterboxing" */
+        object-position: 50% 50%;
     }
 }
 
 @media (max-width: 480px) {
     .baerekraft-section.light-beige-bg {
-        padding-top: 1.5rem; /* Redusert padding-top for små mobiler */
+        padding-top: 0rem;
         padding-bottom: 0rem;
     }
     .baerekraft-section .section-title {
-        font-size: 1.8rem; /* Juster tittelstørrelse for små mobiler */
+        font-size: 1.8rem;
     }
     .baerekraft-section p {
-        font-size: 0.9rem; /* Juster paragrafstørrelse for små mobiler */
-        max-width: 95%; /* Tilpass bredde for små mobiler */
+        font-size: 0.9rem;
+        max-width: 95%;
     }
     .baerekraft-section .container {
-        max-width: 95%; /* Juster ytterligere for små mobiler for å unngå for smal tekst */
+        max-width: 95%;
         padding: 0 10px;
     }
     .skog-bilde-wrapper {
-        margin-top: -2rem; /* Juster negativ margin for små mobiler */
+        margin-top: 1rem; /* Enda mindre avstand på små mobiler */
     }
     .skog-bilde {
-        max-height: 10vh;
-        object-position: 50% 90%;
+        /* FJERN max-height: 10vh; eller endre til object-fit: contain; */
+        max-height: unset; /* Lar bildet skalere naturlig i høyden */
+        object-fit: contain; /* Sikrer at hele bildet vises, kan gi "letterboxing" */
+        object-position: 50% 50%;
     }
 }
