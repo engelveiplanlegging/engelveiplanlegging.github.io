@@ -56,6 +56,7 @@
     font-size: 1.4rem;
     padding: 1rem 2.5rem;
     margin-top: 3rem;
+    /* Fjernet: text-align: center; (fordi den skal på forelderen) */
 }
 
 /* OVERSTYRER margin-top: auto på .main-footer fra layout.css
@@ -110,14 +111,18 @@
     .cta-bottom-section {
         padding-top: 3rem;
         padding-bottom: 3rem;
+        text-align: center; /* VELDIG VIKTIG: Denne sentrerer knappen! */
     }
 
     .cta-bottom-section .cta-description {
         font-size: 1.1rem;
+        text-align: center; /* Senter beskrivelsen */
     }
     .cta-bottom-section .btn-primary {
         font-size: 1rem;
         padding: 0.8rem 1.8rem;
+        display: inline-block; /* Denne er også nødvendig for at text-align på forelderen skal virke */
+        /* Fjernet: text-align: center; */
     }
 
     .main-footer {
@@ -137,8 +142,9 @@
     }
 
     .cta-bottom-section {
-        padding-top: 2rem;
+        padding-top: 1rem;
         padding-bottom: 2rem;
+        text-align: center; /* VELDIG VIKTIG: Denne sentrerer knappen! */
     }
 
     .cta-bottom-section .section-title {
@@ -151,6 +157,8 @@
     .cta-bottom-section .btn-primary {
         font-size: 0.9rem;
         padding: 0.7rem 1.5rem;
+        display: inline-block; /* Denne er også nødvendig for at text-align på forelderen skal virke */
+        /* Fjernet: text-align: center; */
     }
 
     .main-footer {
