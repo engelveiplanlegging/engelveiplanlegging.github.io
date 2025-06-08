@@ -7,15 +7,16 @@
     margin-bottom: 5rem;
     padding-top: 2rem;
     justify-content: center; /* Legger til sentrering for ALLE skjermstørrelser når grid brukes */
+    /* FJERNES: align-items: stretch; - Denne vil tvinge alle kort til høyden av det høyeste, uavhengig av type. */
 }
 
 /* Dette er for å spesifikt overstyre for større skjermer for å sentrere de */
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
     .cards-grid {
         display: flex; /* Endret fra grid til flex for å muliggjøre sentrering av siste rad */
         flex-wrap: wrap; /* Tillater kortene å bryte til ny linje */
         justify-content: center; /* NYTT: Sentrerer kortene horisontalt når de bryter */
-        align-items: flex-start; /* Justerer kortene fra toppen på tvers av rader */
+        /* FJERNES: align-items: stretch; - Samme som over, fjerner for å tillate ulike høyder. */
         gap: 1.5rem; /* Behold gapet her også for konsistens med flex */
     }
 
@@ -34,6 +35,19 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* En lett skygge for dybde */
     display: flex; /* Bruk flex for innhold i kortet */
     flex-direction: column;
+    /* FJERNES: height: 100%; - Ikke nødvendig med min-height og flex-grow for innhold. */
+
+    /* NYTT: Minimumshøyde for kortene. Juster denne verdien etter behov for P-kortene. */
+    /* Kort med mer innhold (f.eks. UL-lister) vil vokse utover denne høyden. */
+    min-height: 380px; /* STARTVERDI: Juster denne for å få ønsket standardlengde på P-kort. */
+}
+
+/* NYTT: Wrapper for innholdet INNE i kortet, for å fylle plassen over ikonet */
+.card-content-wrapper {
+    flex-grow: 1; /* Lar denne wrapperen ta opp all tilgjengelig plass */
+    display: flex; /* Legger til flex for å justere tittel og beskrivelse */
+    flex-direction: column; /* Stabler tittel og beskrivelse */
+    justify-content: flex-start; /* Justerer innholdet fra toppen i wrapperen */
 }
 
 .card-green { /* Fargevariant for mørkegrønne kort */
@@ -150,12 +164,15 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         justify-content: center;
+        /* FJERNES: align-items: stretch; */
     }
 
     .card {
         padding: 1.5rem;
         flex: unset;
         max-width: unset;
+        /* FJERNES: height: 100%; */
+        min-height: 380px; /* NYTT: Behold min-height for mindre skjermer også */
     }
 
     .profile-layout {
