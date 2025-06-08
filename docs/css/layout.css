@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Headerens lag */
+    z-index: 9999; /* Headerens lag er veldig høyt */
     padding: 1.5rem 0;
     transition: background-color 0.3s ease; /* For jevn overgang på bakgrunn */
 }
@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Ingen spesiell z-index her, den arver fra .main-header */
 }
 
 .main-header .logo img {
@@ -22,6 +23,7 @@
     width: 6rem;  /* Endret til rem */
     display: block;
     object-fit: cover;
+    z-index: 10; /* Logoen ligger foran annet innhold i headeren */
 }
 
 .main-nav .nav-list {
@@ -86,7 +88,8 @@ body.alt-page .main-nav .nav-link {
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 1003; /* Sikrer at knappen er over alt annet, inkludert overlegget og menyen */
+    /* VIKTIG ENDRING HER: Gi nav-toggle en HØYERE z-index enn overlayet, men lavere enn menyen selv */
+    z-index: 1003; /* Bør være høyere enn overlay (1001) og meny (1002) */
 }
 
 .nav-toggle .icon-bar {
@@ -100,7 +103,7 @@ body.alt-page .main-nav .nav-link {
 
 /* Fargejustering for burger-ikon på alt-page */
 body.alt-page .nav-toggle .icon-bar {
-    background-color: var(--color-light-beige);
+    background-color: var(--color-primary); /* Changed to var(--color-primary) to match requested style */
 }
 
 /* Animering av burger-ikon til kryss */
@@ -269,7 +272,6 @@ body.alt-page .nav-toggle .icon-bar {
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
         transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
         z-index: 1002; /* Menyen er over overlegget */
-
         justify-content: center;
         align-items: center;
         gap: 2rem;
@@ -294,13 +296,11 @@ body.alt-page .nav-toggle .icon-bar {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* pointer-events: auto; - FJERNET herfra, da det arves fra .main-nav.active */
     }
 
     .main-nav.active .nav-link {
-        color: var(--color-light-beige); /* Teksten i den aktive mobilmenyen blir beige */
-        text-shadow: none; /* Fjerner tekst-skyggen i mobilmenyen for renere utseende */
-        /* pointer-events: auto; - FJERNET herfra, da det arves fra .main-nav.active */
+        color: var(--color-light-beige) !important; /* Force beige text in active mobile menu */
+        text-shadow: none; /* Remove text-shadow in mobile menu for cleaner look */
     }
 
     .main-nav .nav-link {
@@ -341,49 +341,14 @@ body.alt-page .nav-toggle .icon-bar {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.7);
-        z-index: 1001; /* Overlegget ligger over headeren */
+        /* VIKTIG ENDRING HER: Gi overlay en z-index som er lavere enn nav-toggle */
+        z-index: 1001; /* Overlegget ligger under nav-toggle og main-nav */
         pointer-events: none; /* Viktig: Overlegget er ikke klikkbart som standard */
     }
 
     .overlay.active {
         display: block;
-        pointer-events: auto; /* Overlegget blir klikkbart når det er aktivt */
-    }
-
-    /* NY REGEL: Gjør overlegget IKKE klikkbart når menyen er aktiv */
-    .overlay.active.menu-open-overlay { /* Antar at en klasse som 'menu-open-overlay' legges til når menyen er aktiv */
-        pointer-events: none;
-    }
-
-    /* KORREKSJON: For å sikre at OVERLEGET lar deg klikke på MENYEN */
-    body.menu-open .overlay { /* Bruk en klasse på body for å indikere at menyen er åpen */
-        pointer-events: auto; /* Overlegget fanger opp klikk for å lukke */
-    }
-    body.menu-open .main-nav.active {
-        pointer-events: auto; /* Menyen er klikkbar */
-    }
-    body.menu-open .overlay:not(.main-nav.active) { /* Dette er for å spesifikt deaktivere klikk der menyen IKKE er */
-        pointer-events: auto; /* Overlegget fanger klikk utenfor menyen */
-    }
-    /* ENKELERE LØSNING: */
-    .overlay.active {
-        display: block;
-        pointer-events: auto; /* Overlegget fanger klikk når det er aktivt */
-    }
-
-    /* DENNE ER VIKTIG! Sørger for at overlegget DEAKTIVERER klikk der menyen ikke er */
-    /* Antar at `.main-nav.active` er på samme nivå eller barn av noe som styrer `pointer-events` */
-    /* Hvis `overlay` er definert ETTER `main-nav` i HTML, og de har samme `z-index`,
-       ville `main-nav` vært over `overlay`. Men her er `overlay` 1001 og `main-nav` 1002.
-       Det betyr at `main-nav` ligger over `overlay`. */
-
-    /* La oss strømlinjeforme `pointer-events` kontrollen: */
-    /* Deaktiver `pointer-events` på overlegget kun NÅR MENYEN ER AKTIV */
-    .overlay.active {
-        pointer-events: none; /* Overlegget skal IKKE fange klikk når menyen er åpen */
-    }
-    .main-nav.active {
-        pointer-events: auto; /* Menyen skal fange klikk når den er åpen */
+        pointer-events: auto; /* Overlegget fanger klikk når det er aktivt for å lukke menyen */
     }
 }
 
