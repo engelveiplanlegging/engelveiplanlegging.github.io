@@ -18,20 +18,22 @@
     text-align: start; /* Standard: Venstrejustert på større skjermer */
     padding-top: 0; /* Nullstiller padding-top fra global .section-title i base.css */
     color: var(--color-primary);
+    font-size: 3rem; /* Eksempel, juster etter desktop-ønske */
 }
 
 /* Hvis teksten i .profile-layout p skal ha en annen størrelse spesifikt for denne siden. */
 .profile-layout p {
     font-size: 1.25rem;
     color: var(--color-primary);
+    text-align: start; /* Sørg for at den er venstrejustert som standard */
 }
 
 .profile-image {
     padding-top: 0rem;
     margin-top: 3rem;
     flex-shrink: 0;
-    width: 300px; /* <-- JUSTERT: Behold bredden på bildet */
-    height: auto; /* <-- JUSTERT: Tillat bildet å skalere proporsjonalt */
+    width: 300px; /* Behold bredden på bildet */
+    height: auto; /* Tillat bildet å skalere proporsjonalt */
     border-radius: 100px;
     overflow: hidden;
     display: flex;
@@ -47,26 +49,43 @@
     /* Sentrer tittelen når skjermen blir mindre enn 992px */
     .about-section .section-title {
         text-align: center;
+        font-size: 2.5rem; /* Juster tittelstørrelse for nettbrett */
     }
     .profile-layout p {
         text-align: center; /* Sentrer teksten i paragrafene også */
+        font-size: 1.1rem; /* Juster tekststørrelse for nettbrett for bedre lesbarhet */
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) { /* Dette er vanligvis "mobil"-breakpoint */
     .about-section.light-beige-bg {
         padding-top: 5rem; /* Redusert ytterligere for mindre nettbrett/større mobiler (fra 8rem) */
         padding-bottom: 4rem;
     }
-    /* Tittelen og teksten er allerede sentrert fra media (max-width: 992px) */
+    .about-section .section-title {
+        text-align: center; /* Sørg for sentrering av tittel på mobil */
+    }
+    .profile-layout p {
+        font-size: 1rem; /* Justert tekststørrelse for mobil for bedre lesbarhet */
+        text-align: center; /* Sentrer teksten i paragrafene også */
+    }
+    .section-title {
+        font-size: 3rem;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Dette er for små mobiler */
     .about-section.light-beige-bg {
         padding-top: 4rem; /* Redusert ytterligere for små mobiler (fra 6rem) */
         padding-bottom: 3rem;
     }
-    .profile-layout p {
-        font-size: 1rem; /* Juster tekststørrelse for mobil for bedre lesbarhet */
+    .about-section .section-title {
+        text-align: center; /* Sørg for sentrering av tittel på små mobiler */
+        font-size: 3rem; /* Justert tittelstørrelse for små mobiler */
     }
+    .profile-layout p {
+        font-size: 1.2rem; /* Justert tekststørrelse for små mobiler for bedre lesbarhet */
+        text-align: center; /* Sentrer teksten i paragrafene også */
+    }
+
 }
