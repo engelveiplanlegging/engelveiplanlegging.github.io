@@ -155,6 +155,9 @@
     object-fit: cover;
     display: block;
 }
+.main-footer .social-icons a i {
+    color: white; /* Makes Font Awesome icons white */
+}
 
 /* RESPONSIVITET for Komponenter */
 
